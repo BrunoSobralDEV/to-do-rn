@@ -7,15 +7,29 @@ import { styles } from './styles';
 import { theme } from "../../theme";
 import { Task } from '../../components/Task';
 
-const tasks = [
-  'Estudar Inglês',
-]
+// const tasks = [
+//   'Estudar zxcInglês',
+//   'Estudar dInglês',
+//   'Estudaras Inglês',
+//   'Estudar Ing2222lês',
+//   'Estudar 4Inglês',
+//   'Estudar 23Inglês',
+//   'Estudar Inglês',
+//   'Estudar123 Inglês',
+//   'Estudar In12glês',
+//   'Estudar Ing1lês',
+// ]
+type Task = {
+  id: number
+  title: string
+  done: boolean
+}
 
 export function Home() {
-  // const [tasks, setTasks] = useState(5);
+  const [tasks, setTasks] = useState<Task[]>([]);
   
   function handleAddTask() {
-
+    alert('Add Task')
   }
 
   function handleRemoveTask() {
@@ -37,6 +51,7 @@ export function Home() {
 
         <TouchableOpacity
           style={styles.button}
+          onPress={handleAddTask}
         >
           <PlusCircle color='#FFF' size={24} />
         </TouchableOpacity>
@@ -45,11 +60,11 @@ export function Home() {
       <View style={styles.counters}>
         <Text style={styles.countersText}>
           Criadas 
-          <Text style={styles.countersBadge} >{tasks.length}</Text>
+          <Text style={styles.countersBadge} > {tasks.length}</Text>
         </Text>
         <Text style={styles.countersTextPurple}>
           Concluídas
-          <Text style={styles.countersBadge} >{tasks.length}</Text>
+          <Text style={styles.countersBadge} > 0</Text>
         </Text>
       </View>
 
@@ -64,7 +79,7 @@ export function Home() {
               // onRemove={() => handleRemoveTask(item)}
             />
           )}    
-          showsVerticalScrollIndicator={true}   
+          showsVerticalScrollIndicator={false}   
           ListEmptyComponent={() => (
             <View style={styles.listEmpty}>
               <Image style={styles.listEmptyImg} source={require('../../../assets/Clipboard.png')}/>
