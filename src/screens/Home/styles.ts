@@ -20,6 +20,7 @@ export const styles = StyleSheet.create({
   form: {
     width: '100%',
     flexDirection: 'row',
+    marginBottom: 32,
   },
   input: {
     flex: 1,
@@ -39,7 +40,35 @@ export const styles = StyleSheet.create({
     justifyContent: 'center',
     backgroundColor: theme.colors["blue-dark"],
   },
-  buttonText: {
+  buttonIcon: {
     color: theme.colors["gray-100"]
+  },
+  counters: {
+    width: '100%',
+    flexDirection: 'row',
+    justifyContent: "space-between",
+    marginBottom: 20,
+  },
+  countersText: {
+    color: theme.colors["blue-dark"],
+    fontSize: 14,
+    fontWeight: "bold"
+  },
+  countersTextPurple: {
+    color: theme.colors["purple-dark"],
+  },
+  countersBadge: {
+    color: theme.colors["gray-200"],
+    backgroundColor: theme.colors["gray-400"],
+    padding: 5,
+  },
+  listEmpty: {
+    alignItems: 'center',
+  },
+  listEmptyImg: {
+    marginBottom: 16,
+  },
+  listEmptyText: {
+    color: theme.colors["gray-300"]
   }
 })
